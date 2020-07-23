@@ -1,0 +1,12 @@
+<ng-container *ngIf="(contact$ | async) as contact; else loading">
+
+  <h1>Contact</h1>
+  <div><b> {{ contact.FirstName }}  {{ contact.Surname }} </b></div>
+  <br/>
+  <ul>
+    <li><b>Email:</b> {{ contact.Email }}</li>
+    <li><b>Date Of Birth:</b> {{ contact.DateOfBirth | date: "dd.MM.y" }}</li>
+  </ul>
+
+</ng-container>
+<ng-template #loading>Loading…</ng-template>
